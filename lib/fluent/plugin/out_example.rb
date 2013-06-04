@@ -8,6 +8,7 @@ class ExampleOutput < Fluent::Output
   def emit(tag, es, chain)
     chain.next
     es.each do |time, record|
+      p "example"
       p time
       p record
     end

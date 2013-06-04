@@ -7,5 +7,6 @@ class ExampleInput < Fluent::Input
 
   def start
     Fluent::Engine.emit("debug.debug", Fluent::Engine.now, {"hoge" => "fuga"})
+    Fluent::Engine.emit("debug.debug", Fluent::Engine.now, {"aaa" => "bbb"})
   end
 end
