@@ -2,8 +2,12 @@ require 'fluent/plugin'
 require 'fluent/config'
 require 'fluent/output'
 
-class ExampleOutput < Fluent::Output
-  Fluent::Plugin.register_output('example', self)
+
+module Fluent
+
+
+class ExampleOutput < Output
+  Plugin.register_output('example', self)
 
   def emit(tag, es, chain)
     chain.next
@@ -13,4 +17,7 @@ class ExampleOutput < Fluent::Output
       p record
     end
   end
+end
+
+
 end
