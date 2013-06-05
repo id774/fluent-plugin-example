@@ -6,11 +6,11 @@ module Fluent
 
 
 class ExampleInput < Input
-  Fluent::Plugin.register_input('example', self)
+  Plugin.register_input('example', self)
 
   def start
-    Fluent::Engine.emit("debug.debug", Fluent::Engine.now, {"hoge" => "fuga"})
-    Fluent::Engine.emit("debug.debug", Fluent::Engine.now, {"aaa" => "bbb"})
+    Engine.emit("debug.debug", Engine.now, {"hoge" => "fuga"})
+    Engine.emit("debug.debug", Engine.now, {"aaa" => "bbb"})
   end
 end
 
